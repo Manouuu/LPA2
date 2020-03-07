@@ -2,7 +2,8 @@ class Burger < ApplicationRecord
     #Call openfoodfacts API
     def nutriments
         code = self.code
-        @nutriments = Openfoodfacts::Product.get(code, locale: 'fr').nutriments
+        @product = Openfoodfacts::Product.get(code, locale: 'fr')
+        @nutriments = @product.nutriments
         @resultset = [
             "salt" => @nutriments.salt,
             "salt_unit" => @nutriments.salt_unit, 
