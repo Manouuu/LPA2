@@ -37,12 +37,24 @@
   </thead>
 
   <tbody>
-    <% @burger.nutriments.each do |burger| %>
       <tr>
-        <td><%= burger[0] %></td>
-        <td><%= burger[1] %></td>
+        <td>Salt</td>
+        <td><%= @burger.nutriments[0]["salt"] %> <%= @burger.nutriments[0]["salt_unit"] %></td>
       </tr>
-    <% end %>
+        <td>Sugars</td>
+        <td><%= @burger.nutriments[0]["sugars"] %> <%= @burger.nutriments[0]["sugars_unit"] %></td>
+      <tr>
+        <td>Proteins</td>
+        <td><%= @burger.nutriments[0]["proteins"] %> <%= @burger.nutriments[0]["proteins_unit"] %></td>
+      </tr>
+      <tr>
+        <td>Sodium</td>
+        <td><%= @burger.nutriments[0]["sodium"] %> <%= @burger.nutriments[0]["sodium_unit"] %></td>
+      </tr>
+      <tr>
+      <td>Energy</td>
+      <td><%= @burger.nutriments[0]["energy"] %> <%= @burger.nutriments[0]["energy_unit"] %></td>
+    </tr>
   </tbody>
 </table>
 
