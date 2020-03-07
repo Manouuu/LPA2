@@ -5,6 +5,7 @@ class Burger < ApplicationRecord
         @product = Openfoodfacts::Product.get(code, locale: 'fr')
         if(@product) 
             @nutriments = @product.nutriments
+            #p @nutriments
             @resultset = [
                 "salt" => @nutriments.salt,
                 "salt_unit" => @nutriments.salt_unit, 
