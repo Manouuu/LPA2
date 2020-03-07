@@ -18,6 +18,19 @@ class Burger < ApplicationRecord
                 'energy' => @nutriments.energy,
                 'energy_unit' => @nutriments.energy_unit
             ]
+        else
+            @resultset = [
+                "salt" => "",
+                "salt_unit" => "", 
+                "sugars" => "",
+                "sugars_unit" => "",
+                "proteins" => "",
+                "proteins_unit" => "",
+                "sodium" => "",
+                "sodium_unit" => "",
+                'energy' => "",
+                'energy_unit' => "",
+            ]
         end
     end
 end
