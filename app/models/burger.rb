@@ -3,7 +3,7 @@ class Burger < ApplicationRecord
     def nutriments
         code = self.code
         @product = Openfoodfacts::Product.get(code, locale: 'fr')
-        if(@product)
+        if(@product) 
             @nutriments = @product.nutriments
             @resultset = [
                 "salt" => @nutriments.salt,
@@ -17,6 +17,6 @@ class Burger < ApplicationRecord
                 'energy' => @nutriments.energy,
                 'energy_unit' => @nutriments.energy_unit
             ]
-        #return product.nutriments.to_hash
+        end
     end
 end
